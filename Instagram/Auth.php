@@ -97,5 +97,17 @@ class Auth {
         throw new \Instagram\Core\ApiException( $response->getErrorMessage(), $response->getErrorCode(), $response->getErrorType() );
     }
 
+    /**
+     * Set the RedirectURI
+     *
+     * Sets the RedirectURI so it can be set after the
+     * object has been instantiated
+     *
+     * @param string $redirect_uri Redirect URI
+     *
+     */
+    public function setRedirectUri($redirect_uri) {
+      $this->config['redirect_uri'] = $redirect_uri;
+    }
 
 }

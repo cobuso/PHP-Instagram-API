@@ -92,7 +92,7 @@ class Auth {
         );
         $response = $this->proxy->getAccessToken( $post_data );
         if ( isset( $response->getRawData()->access_token ) ) {
-            return $response->getRawData()->access_token;
+            return $response->getRawData();
         }
         throw new \Instagram\Core\ApiException( $response->getErrorMessage(), $response->getErrorCode(), $response->getErrorType() );
     }
